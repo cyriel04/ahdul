@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import { Table, Button, Modal, Input } from "antd";
 import { bindActionCreators } from "redux";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Icons from "@fortawesome/fontawesome-free-solid";
 import { appStart, addData } from "../actions";
 import Login from "./Login";
 import TableComponent from "./TableComponent";

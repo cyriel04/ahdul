@@ -10,7 +10,11 @@ const loginReducer = (state = [], { type, data }) => {
       axios.post("http://localhost:3004/posts", { id: newId, ...data });
       return state.concat({ key: newId, ...data });
     case "DELETE_DATA":
-      return state;
+      const URL = "http://localhost:3004/posts/" + data;
+      axios.delete(URL);
+      return state.filter(function(event) {
+        return event.id !== data;
+      });
     default:
       return state;
   }

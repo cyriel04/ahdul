@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Table, Button, Modal } from "antd";
+import { Table, Button } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from "react-redux";
 import * as Icons from "@fortawesome/fontawesome-free-solid";
+import PropTypes from "prop-types";
+import { deleteData } from "../actions";
 const { Column } = Table;
 const ButtonGroup = Button.Group;
 
@@ -17,7 +19,7 @@ class TableComponent extends Component {
             title="ACTION"
             key="action"
             width={120}
-            render={() => (
+            render={data => (
               <span>
                 <ButtonGroup>
                   <Button size="small" className="view">
@@ -26,7 +28,13 @@ class TableComponent extends Component {
                   <Button size="small" className="upd">
                     <FontAwesomeIcon icon={Icons.faPencilAlt} />
                   </Button>
-                  <Button size="small" className="del">
+                  <Button
+                    size="small"
+                    className="del"
+                    onClick={() => {
+                      this.props.deleteData(data.id);
+                    }}
+                  >
                     <FontAwesomeIcon icon={Icons.faTrashAlt} />
                   </Button>
                 </ButtonGroup>
@@ -38,6 +46,10 @@ class TableComponent extends Component {
     );
   }
 }
+
+TableComponent.propTypes = {
+  deleteData: PropTypes.func
+};
 function mapStateToProps(state) {
   return {
     app: state.app
@@ -45,5 +57,5 @@ function mapStateToProps(state) {
 }
 export default connect(
   mapStateToProps,
-  null
+  { deleteData }
 )(TableComponent);

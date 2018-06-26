@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export const LOGIN = "LOGIN";
 export const APP_START = "APP_START";
 export const ADD_DATA = "ADD_DATA";

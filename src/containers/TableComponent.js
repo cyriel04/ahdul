@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as Icons from "@fortawesome/fontawesome-free-solid";
 import PropTypes from "prop-types";
 import { deleteData } from "../actions";
+import UpdateModal from "./updateModal";
 const { Column } = Table;
 const ButtonGroup = Button.Group;
 
@@ -20,14 +21,9 @@ class TableComponent extends Component {
             key="action"
             width={120}
             render={data => (
-              <span>
-                <ButtonGroup>
-                  <Button size="small" className="view">
-                    <FontAwesomeIcon icon={Icons.faEye} />
-                  </Button>
-                  <Button size="small" className="upd">
-                    <FontAwesomeIcon icon={Icons.faPencilAlt} />
-                  </Button>
+              <span id="button-group">
+                <UpdateModal dataProps={data} />
+                <div>
                   <Button
                     size="small"
                     className="del"
@@ -37,7 +33,7 @@ class TableComponent extends Component {
                   >
                     <FontAwesomeIcon icon={Icons.faTrashAlt} />
                   </Button>
-                </ButtonGroup>
+                </div>
               </span>
             )}
           />

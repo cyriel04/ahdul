@@ -18,6 +18,7 @@ export class Home extends Component {
     title: "",
     desc: ""
   };
+
   UNSAFE_componentWillMount() {
     axios("http://localhost:3004/posts").then(resp => {
       const data = resp.data.map(a => ({
@@ -29,16 +30,19 @@ export class Home extends Component {
       this.props.appStart(data);
     });
   }
+
   showModal = () => {
     this.setState({
       modalVisible: true
     });
   };
+
   handleCancel = () => {
     this.setState({
       modalVisible: false
     });
   };
+
   handleOk = () => {
     this.setState({
       modalVisible: false
@@ -61,7 +65,7 @@ export class Home extends Component {
           Add
         </Button>
         <Modal
-          title="Basic Modal"
+          title="Add Data"
           visible={this.state.modalVisible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}

@@ -45,7 +45,9 @@ export class Home extends Component {
 
   handleOk = () => {
     this.setState({
-      modalVisible: false
+      modalVisible: false,
+      title: "",
+      desc: ""
     });
     const data = {
       title: this.state.title,

@@ -18,7 +18,12 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.9.1",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "google-maps-react": "^2.0.2",
+    "graphql": "^0.13.2",
     "i": "^0.3.6",
+    "lodash": "^4.17.10",
     "npm": "^6.1.0",
     "prettier": "^1.13.5",
     "react": "^16.4.1",
@@ -27,6 +32,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-sparklines": "^1.7.0",
     "redux": "^4.0.0"
   },
   "scripts": {

@@ -5,6 +5,8 @@ import "./App.css";
 import Login from "./containers/Login";
 import Register from "./containers/Register";
 import Home from "./containers/Home";
+import Weather from "./containers/Weather";
+import Crud from "./containers/Crud";
 
 class App extends Component {
   render() {
@@ -14,6 +16,8 @@ class App extends Component {
           <Route exact path="/" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/home" component={Home} />
+          <Route path="/weather" component={Weather} />
+          <Route path="/crud" component={Crud} />
         </Switch>
       </BrowserRouter>
     );

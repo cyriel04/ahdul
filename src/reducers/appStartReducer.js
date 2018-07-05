@@ -8,11 +8,11 @@ const loginReducer = (state = [], { type, data }) => {
     case "ADD_DATA":
       const newId = state[Number(state.length) - 1].id + 1;
       delete data.key;
-      axios.post("http://localhost:3004/posts", { id: newId, ...data });
+      axios.post("http://localhost:3000/posts", { id: newId, ...data });
       return state.concat({ key: newId, id: newId, ...data });
 
     case "UPDATE_DATA":
-      const URL = "http://localhost:3004/posts/" + data.id;
+      const URL = "http://localhost:3000/posts/" + data.id;
       axios.put(URL, {
         ...data
       });
@@ -25,7 +25,7 @@ const loginReducer = (state = [], { type, data }) => {
       return newState;
 
     case "DELETE_DATA":
-      axios.delete("http://localhost:3004/posts/" + data);
+      axios.delete("http://localhost:3000/posts/" + data);
       return state.filter(event => {
         return event.id !== data;
       });
